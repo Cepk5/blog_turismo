@@ -7,7 +7,7 @@ class Articulo(models.Model):
     id = models.AutoField(primary_key=True)
     titulo = models.CharField(max_length=70)
     subtitulo = models.CharField(max_length=70)
-    #region deberia venir de otra tabla como foreignKey
+    #region deberia venir de otra tabla como foreignKey, pero puede quedar asi por ahora
     region = models.CharField(max_length=40)
     #usuario deberia ser una ForeingnKey que trae de BD de usuarios?? 
     autor = models.CharField(max_length=50)
