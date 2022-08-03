@@ -40,3 +40,31 @@
                 </div>
             </div>
         </header>
+<!---Aca deberia solo estar la navbar y tener opciones de crear nuevo articulo-->
+
+<h2>Crear Artículo</h2>
+
+    {% if formulario.errors %}
+        <p style="color: red;">Revisar los datos del formulario</p>
+
+    {% endif %}
+    <form id= "form_crear" action="" method="POST">{% csrf_token %}
+        <fieldset id="field_info">
+        <!---
+        <p><label>Ingrese un título: <input id="titulo" type="text" name="titulo" required></label></p>
+        <p><label>Ingrese un subtítulo: </label><input id="subtitulo" type="text" name="subtitulo" required></label></p>
+        <p><label><textarea id="cuerpo" name="cuerpo" rows="10" cols="100" placeholder="Cuerpo del artículo" required></textarea></p>
+        </label>
+        <fieldset id="field_img">
+            <p><label>Adjunte imagen: <input id="img" type="file" name="img" required></label></p>
+        </fieldset>
+        -->
+        <table>
+
+            {{ formulario.as_table }}
+
+        </table>
+        </fieldset>
+        <input type="submit" value="Publicar">
+    </form>
+

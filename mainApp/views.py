@@ -42,7 +42,6 @@ def crear_art(request):
     return render(request, "mainApp/crear_articulo.html", {"formulario":formulario})
 
 #listar articulos del blog (cRud)
-
 def listar_art(request):
 
     articulos = Articulo.objects.all()
