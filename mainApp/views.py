@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from mainApp.models import *
 from mainApp.forms import Articulo_form
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -16,7 +19,7 @@ def pages(request):
     return render(request, "mainApp/pages.html")
 
 #crear articulo en el blog (Crud)
-
+"""
 def crear_art(request):
 
     if request.method == 'POST': #VER COMO AGREGAR AUTOR QUE SE SACARIA DEL QUE ESTA LOGUEADO, FECHA CON GETDATE? y recibir imagen
@@ -39,7 +42,6 @@ def crear_art(request):
     return render(request, "mainApp/crear_articulo.html", {"formulario":formulario})
 
 #listar articulos del blog (cRud)
-"""
 def listar_art(request):
 
     articulos = Articulo.objects.all()
@@ -48,16 +50,31 @@ def listar_art(request):
 
     return render(request, "mainApp/pages.html", contexto)
 """
-
-#CRUD con ListView clases basadas en vistas // listar articulos del blog
-
-class articulo_list(ListView):
-
+#Clases basadas en vistas
+class Articulo_list(ListView):
     model = Articulo
-    template = "mainApp/pages.html"
+    template_name = "mainApp/pages.html"
+
+class Articulo_det(DetailView):
+    model = Articulo
+    template_name = "mainApp/pages_detalle.html"
+    
+class Articulo_new(LoginRequiredMixin, CreateView):
+    model = Articulo
+    success_url = reverse_lazy('List')
+    fields = ['titulo', 'subtitulo', 'cuerpo', 'region']
+
+class Articulo_update(LoginRequiredMixin, UpdateView):
+    model = Articulo
+    success_url = reverse_lazy('List')
+    fields = ['titulo', 'subtitulo', 'cuerpo', 'region']
+
+class Articulo_del(LoginRequiredMixin, DeleteView):
+    model = Articulo
+    success_url = reverse_lazy('List')
 
 #eliminar articulo del blog (cruD)
-
+"""
 def eliminar_art(request, pagina):
 
     articulo = Articulo.objects.get(titulo=pagina)
@@ -68,31 +85,5 @@ def eliminar_art(request, pagina):
     contexto = {"articulos":articulos}
 
     return render(request, "mainApp/pages.html", contexto)
-
-#editar articulo del blog (crUd)
-
-def editar_art(request, pagina):
-    
-    articulo = Articulo.objects.get(titulo=pagina)
-
-    if request.method == 'POST': #VER COMO AGREGAR AUTOR QUE SE SACARIA DEL QUE ESTA LOGUEADO, FECHA CON GETDATE? y recibir imagen
-
-        formulario = Articulo_form(request.POST)
-        print(formulario)
-
-        if formulario.is_valid:
-
-            info = formulario.cleaned_data
-
-            articulo = Articulo(titulo=info['titulo'], subtitulo=info['subtitulo'], autor=info['autor'], cuerpo=info['cuerpo'],fecha_creacion=info['fecha_creacion'], fecha_mod=info['fecha_mod'], imagen=info['imagen'])
-            
-            articulo.save()
-
-            #VER DE QUE MANDE O MUESTRE UN MENSAJE QUE LA PUBLICACION SE CREO CON EXITO
-            return render(request, "mainApp/index.html")
-    else:
-
-        formulario = Articulo_form(initial={'titulo': articulo.titulo,'subtitulo':articulo.subtitulo, 'autor':articulo.autor, 'cuerpo':articulo.cuerpo, 'fecha_creacion':articulo.fecha_creacion, 'fecha_mod':articulo.fecha_mod})
-
-    return render(request, "mainApp/modificar_articulo.html", {"formulario":formulario, 'pagina':pagina})
+"""
 

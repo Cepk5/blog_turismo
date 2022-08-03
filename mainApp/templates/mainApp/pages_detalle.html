@@ -40,5 +40,16 @@
                 </div>
             </div>
         </header>
-<!---Aca deberia solo estar la navbar y tener opciones de crear nuevo articulo-->
 
+    <h2>Articulo: {{ object_list.titulo }}</h2>
+
+    <p>Articulo: {{ articulo.titulo }}</p>
+    <p>Subtitulo: {{ articulo.subtitulo }}</p>
+    <p>Region: {{ articulo.region }}</p>
+    <p>Autor: {{ articulo.autor }}</p>
+    <p>
+        <a href="{% url 'List' %}">Volver</a>
+    </p>
+
+</body>
+</html>
