@@ -43,11 +43,15 @@
 <!---Aca deberia solo estar la navbar y tener opciones de crear nuevo articulo-->
 
 <h2>Borrar Artículo</h2>
-
+<div class="card-body">
     <form id= "form_del" method="POST">{% csrf_token %}
-        <p>¿Estás seguro que deseas borrar el articulo {{ articulo }} "</p>
-        <input type="submit" value="Confirmar">
+        <p>¿Estás seguro que deseas borrar el articulo de {{ articulo.titulo }}?</p>
+        <input class="btn btn-primary" type="submit" value="Confirmar">
     </form>
-    <p>
-        <a href="{% url 'List' %}">Volver</a>
-    </p>
+</div>
+<div class="card-body">
+        <div class="col-lg-6">        
+            <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
+        </div>
+</div>
+

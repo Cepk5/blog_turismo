@@ -1,0 +1,15 @@
+{% extends "mainApp/base.html" %}
+{% load static %}
+
+{% block cambiar %}
+<div class="card-body">
+    <h3 style="color:red"> No tienes permiso para hacer eso! Inicia sesión como administrador</h3>
+
+</div>    
+    
+<div class="card-body">
+    <div class="col-lg-6">     
+        <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
+    </div>
+</div>
+{% endblock %}

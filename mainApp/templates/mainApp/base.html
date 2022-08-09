@@ -13,27 +13,32 @@
         <link href="{% static 'mainApp/css/styles.css' %}" rel="stylesheet" />
     </head>
     {% block titulo %}
-        
+
     {% endblock %}
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="index">"NOMBRE DEL SITIO"</a>
+                <a class="navbar-brand" href="{% url 'Index' %}">BlogTur</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Index' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'About' %}">About</a></li>
                         <!---<li class="nav-item"><a class="nav-link" href="#!">Contacto</a></li>--->
-                        <li class="nav-item"><a class="nav-link" aria-current="page" href="pages">Articulos</a></li>
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="{% url 'List' %}">Articulos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Message' %}">Centro de Mensajes</a></li>
                         <!---Mostrar login logout segun corresponda-->
-                        {% if request.user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link active" href="{% url 'Logout' %}">Logout</a></li>
+    
+                        {% if request.user.is_authenticated %}:
+                        <img src="{{ user.profile.avatar.url }}"/>
+                        <p class="" style="color:white">Hola, {{ user.username }} !!</p
+                            <li class="nav-item"><a class="nav-link active" href="{% url 'Editar_perfil' %}">Perfil</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="{% url 'Logout' %}">Cerrar sesión</a></li>
                         {% else %}
-                            <li class="nav-item"><a class="nav-link active" href="{% url 'Login' %}">Login</a></li>
-                            <li class="nav-item"><a class="nav-link active" href="{% url 'Register' %}">Registro</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="{% url 'Login' %}">Inicia sesión</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="{% url 'Register' %}">Registrate</a></li>
+
                         {% endif %}
                     </ul>
                 </div>
@@ -52,4 +57,8 @@
         {% block cambiar %}
 
         {% endblock %}
+        
+    <footer class="py-5 bg-dark">
+        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
+    </footer>
         

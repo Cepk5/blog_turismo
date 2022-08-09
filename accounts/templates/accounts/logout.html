@@ -1,23 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>LOGOUT</title>
-</head>
+{% extends "mainApp/base.html" %}
+{% load static %}
 
-{% block titulo %}
-<h1 class ='mb-5'> Logout </h1>
-{% endblock %}
-
-<body>
 {% block cambiar %}
     <h1>Te has deslogueado</h1>
 
-<p>
-        <a href="{% url 'Index' %}">Volver</a>
-    </p>
+    <div class="card-body">
+        <div class="col-lg-6">     
+            <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
+        </div>
+    </div>
 {% endblock %}
 </body>
 </html>

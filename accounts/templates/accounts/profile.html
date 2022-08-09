@@ -1,0 +1,21 @@
+{% extends "mainApp/base.html" %}
+{% load static %}
+{% block cambiar %}
+
+<h1>EDITAR PERFIL: {{ usuario }}</h1>
+
+<form action="{% url 'Editar_perfil' %}" method="POST"> {% csrf_token %}
+
+    <table>
+
+        {{ miFormulario.as_table }}
+        
+    </table>
+    <div class="card-body">
+        <input class="btn btn-primary" type="submit", value='Enviar'>
+        <a class="btn btn-primary" href="{% url 'Index' %}">Volver</a>
+    </div>
+</form>
+
+{% endblock %}
+
