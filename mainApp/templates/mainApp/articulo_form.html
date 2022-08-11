@@ -5,19 +5,25 @@
 <!---Aca deberia solo estar la navbar y tener opciones de crear nuevo articulo-->
 <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
 <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
-<h2>Artículo</h2>
-
-    <form id= "form_crear" enctype="multipart/form-data" method="POST">{% csrf_token %}
-        
-        {{ form.as_p }}
+<div class="card-body">
+    <div class="card col-7">
         <div class="card-body">
-            <div class="col-lg-6">
-                <input class="btn btn-primary" type="submit" value="Enviar">
-            
-                <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
-            </div>
+            <h2>Crear artículo</h2>
+
+            <form id= "form_crear" enctype="multipart/form-data" method="POST">{% csrf_token %}
+                
+                {{ form.as_p }}
+                <div class="card-body">
+                    <div class="col-lg-6">
+                        <input class="btn btn-primary" type="submit" value="Enviar">
+                    
+                        <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+</div>
 {% endblock %}
     
     

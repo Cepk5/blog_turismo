@@ -5,123 +5,39 @@
 <div class="container">
     <div class="row">
         <!-- Blog entries-->
-        <div class="col-lg-8">
+        <div>
             <h3>Información útil para viajes</h3>
+        </div>
             <!-- Nested row for non-featured blog posts-->
-            <div class="row">
                 <div class="col-lg-6">
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href=""><img class="card-img-top" src="https://assets.iprofesional.com/cdn-cgi/image/w=880,f=webp/https://assets.iprofesional.com/assets/jpg/2018/12/470686.jpg" alt="Imagen de pasaporte" /></a>
                         <div class="card-body">
-                            <div class="small text-muted">January 1, 2022</div>
-                            <h2 class="card-title h4">Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
+                            <div class="small text-muted">{{ articulo.fecha_mod }}</div>
+                            <h2 class="card-title h4">{{ articulo.titulo }}</h2>
+                            <p class="card-text">¡Que tener en cuenta antes de viajar?<br>
+                                Debemos saber que para viajar al interior del país solo te hará falta tu DNI vigente. 
+                                Para viajar al exterior del país, debes tener el pasaporte vigente, y siempre verificar las páginas oficiales, ya que hay varios países que precisan visas específicas.</p>
+                            <!---<a class="btn btn-primary" href="">Detalles →</a>--->
                         </div>
                     </div>
-                    <!-- Blog post
-                    <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                        <div class="card-body">
-                            <div class="small text-muted">January 1, 2022</div>
-                            <h2 class="card-title h4">Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla.</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
-                        </div>
-                    </div>--->
                 </div>
                 <div class="col-lg-6">
                     <!-- Dejamos unos articulos de informacion de viaje fijos--->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                        <a href="#!"><img class="card-img-top" src="https://www.redaccionmedica.com/images/faqs/cual-es-el-porcentaje-de-fallo-de-la-pcr.jpg" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">{{ articulo.fecha_mod }}</div>
                             <h2 class="card-title h4">{{ articulo.titulo }}</h2>
-                            <p class="card-text">{{ articulo.cuerpo|safe }}</p>
-                            <a class="btn btn-primary" href="">Detalles →</a>
+                            <p class="card-text">Viajar en épocas de covid.
+                                Recomendamos chequear las páginas de turismo oficiales de cada provincia/país al que deseas viajar, ya que allí es donde vas a poder verificar realmente qué es requerido para el ingreso. 
+                                Pueden pedirte: formularios específicos, PCR negativo dentro de las 48hs, 2 o màs dosis de vacuna, o todas ellas en conjunto, y dichas normas van actualizandose continuamente. 
+                                Nuestro consejo: una semana antes de tu vuelo, ingresá a la página web correspondiente y actualizate.</p>
+                            <!---<a class="btn btn-primary" href="">Detalles →</a>--->
                         </div>
                     </div>
-                    <!---Blog post
-                    <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
-                        <div class="card-body">
-                            <div class="small text-muted">January 1, 2022</div>
-                            <h2 class="card-title h4">Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
-                            <a class="btn btn-primary" href="#!">Read more →</a>
-                        </div>
-                    </div>-->
-                </div>
-            </div>
-            <!-- Pagination
-            <nav aria-label="Pagination">
-                <hr class="my-0" />
-                <ul class="pagination justify-content-center my-4">
-                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">Newer</a></li>
-                    <li class="page-item active" aria-current="page"><a class="page-link" href="#!">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                    <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">15</a></li>
-                    <li class="page-item"><a class="page-link" href="#!">Older</a></li>
-                </ul>
-            </nav>
-        </div>
-        <!-- Side widgets
-        <div class="col-lg-4">
-            <!-- Search widget-->
-            <div class="card mb-4">
-                <!---Hay que ver como funciona la busqueda sino la sacamos-->
-                <div class="card-header">Search</div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Categories widget
-            <div class="card mb-4">
-                <!---Aca pueden ir las distintas zonas del pais y que te redirija a todas las pulicaciones de esa zona
-                <div class="card-header">Categories</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#!">Web Design</a></li>
-                                <li><a href="#!">HTML</a></li>
-                                <li><a href="#!">Freebies</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-6">
-                            <ul class="list-unstyled mb-0">
-                                <li><a href="#!">JavaScript</a></li>
-                                <li><a href="#!">CSS</a></li>
-                                <li><a href="#!">Tutorials</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Side widget-->
-            <div class="card mb-4">
-                <div class="card-header">Side Widget</div>
-                <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer-->
-<footer class="py-5 bg-dark">
-    <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
-</body>
-</html>
-
-
+                </div>  
+    </div>  
+</div>   
 {% endblock %}

@@ -1,10 +1,8 @@
 from django.urls import path, include
-from mainApp import views
-from accounts import views
+from messageApp import views
+from .views import *
 
 urlpatterns = [
-    path('messages/', views.login_request, name ='Message'),
-    #path('',include('mainApp.urls')),
-    #al mensaje lo hago desde aca o desde la app messageApp?
-    #path('messageApp/messages', views.mensaje, name="mensaje"),
+    path('messages/', Mensaje.as_view(), name ="message_list"),
+    path('mensaje_form/', Mensaje_nuevo.as_view(), name="messages_new"),
 ]

@@ -45,7 +45,8 @@ def register(request):
         form = UserRegisterForm()
 
     return render(request, "accounts/signup.html", {"form":form})
-            
+
+   
 @login_required
 def editarPerfil(request):
 

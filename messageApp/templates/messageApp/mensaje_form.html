@@ -1,0 +1,22 @@
+{% extends "mainApp/base.html" %}
+{% load static %}
+
+{% block cambiar %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<h2>Nuevo Mensaje</h2>
+
+    <form id= "form_crear" enctype="multipart/form-data" method="POST">{% csrf_token %}
+        <p>Para: {{ form.recibe }}</p>
+        <p>De: {{ form.envia }}</p>
+        <div>{{ form.mensaje }}</div>
+
+        <div class="card-body">
+            <div class="col-lg-6">
+                <input class="btn btn-primary" type="submit" value="Enviar">
+            
+                <a class="btn btn-primary" href="{% url 'message_list' %}">Volver</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}

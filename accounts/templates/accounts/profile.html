@@ -3,19 +3,24 @@
 {% block cambiar %}
 
 <h1>EDITAR PERFIL: {{ usuario }}</h1>
+<div class="card-body">
+    <div class="card col-4">
+        <div class="card-body">
+            <form action="{% url 'Editar_perfil' %}" method="POST"> {% csrf_token %}
 
-<form action="{% url 'Editar_perfil' %}" method="POST"> {% csrf_token %}
+                <table>
 
-    <table>
-
-        {{ miFormulario.as_table }}
-        
-    </table>
-    <div class="card-body">
-        <input class="btn btn-primary" type="submit", value='Enviar'>
-        <a class="btn btn-primary" href="{% url 'Index' %}">Volver</a>
+                    {{ miFormulario.as_table }}
+                    
+                    
+                </table>
+                <div class="card-body">
+                    <input class="btn btn-primary" type="submit", value='Modificar'>
+                    <a class="btn btn-primary" href="{% url 'Index' %}">Volver</a>
+                </div>
+            </form>
+        </div>
     </div>
-</form>
-
+</div>
 {% endblock %}
 

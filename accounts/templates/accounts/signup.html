@@ -6,20 +6,20 @@
 
 {% endblock %}
 
-<body>
 {% block cambiar %}
-<h1 class ='mb-5'> Registrarse</h1>
-    
-    <form action="{% url 'Register' %}" method = "POST"> {% csrf_token %}
-        
-        {{ form.as_p }}
+<div class="card-body">
+    <div class="card col-4">
         <div class="card-body">
-            <button class="btn btn-primary" type="submit">REGISTRARSE</button>
-        </div>
-    </form>
-    <div class="card-body">
-        <div class="col-lg-6">     
-            <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
+            <h1 class ='mb-5'> Registrarse</h1>    
+            <form action="{% url 'Register' %}" method = "POST"> {% csrf_token %}
+                
+                {{ form.as_p }}
+                <div class="card-body">
+                    <button class="btn btn-primary" type="submit">REGISTRARSE</button>
+                    <a class="btn btn-primary" href="{% url 'List' %}">Volver</a>
+                </div>
+            </form>
         </div>
     </div>
+</div>    
 {% endblock %}

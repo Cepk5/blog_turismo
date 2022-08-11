@@ -20,10 +20,3 @@ urlpatterns = [
     #al mensaje lo hago desde aca o desde la app messageApp?
     #path('messageApp/messages', views.mensaje, name="mensaje"),
 ]
-"""
-completar las views."FUNCION" como corresponda
-path('about', views., name=""),
-path('articulos', views., name=""),
-path('borrar_articulo', views., name=""),
-path('crear_articulo', views., name=""),
-"""

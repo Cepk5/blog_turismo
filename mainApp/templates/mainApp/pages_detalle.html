@@ -7,8 +7,10 @@
     <h1>{{ articulo.titulo }}</h1>
     <h5>Subtitulo: {{ articulo.subtitulo }}</h5>
     <p>Region: {{ articulo.region }} | Por: {{ articulo.autor }}</p>
+    <!---Cargo imagen y slice al nombre para sacar fecha-->
     {% if articulo.imagen %}
         <a href="#!"><img class="card-img-top" src="{{ articulo.imagen.url }}" alt="..." /></a>
+        <p>Fecha de carga de imagen: {{ articulo.imagen.name | slice:"6:16" }}</p>
     {% else %}
         <h4>Sin Imagen</h4>
     {% endif %}

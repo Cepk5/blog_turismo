@@ -1,1 +1,30 @@
-PRUEBA
+{% extends "mainApp/base.html" %}
+{% load static %}
+
+{% block cambiar %}
+
+    <div class="card-body">
+            {% if request.user.is_authenticated  %}
+            <h3>Centro de mensajes</h3>
+                {% for mensaje in object_list %}
+            <div class="card col-4">
+                    {% if mensaje.recibe ==  request.user %}
+                    <div class="card mb-4">
+                        <h5>Mensaje de: {{ mensaje.envia }}</h5>
+                        <p>{{ mensaje.fecha|date:"d/m/Y | H:m" }}</p>
+                    </div>
+                        <p>{{ mensaje.mensaje|safe }}</p>
+                    {% endif %}
+            </div>        
+                {% endfor %}
+            
+        
+            </div>
+            <div class="card-body">
+                <a class="btn btn-primary" href="{% url 'messages_new' %}">Mensaje Nuevo</a>
+                <a class="btn btn-primary" href="{% url 'Index' %}">Volver</a>
+            </div>
+            {% else %}
+                <h3>Por favor inicia sesion para utilizar los mensajes</h3>
+            {% endif %}
+{% endblock %}
