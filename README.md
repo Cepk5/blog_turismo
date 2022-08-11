@@ -18,5 +18,6 @@
 -	Mensajes entre usuarios leidos/no leidos, borrar mensaje/papelera, contestar mensaje.
 -	Subir a Heroku.
 
-### Creadores
-Las tareas fueron realizadas por: Guido Libertini, Juan Pazos.
+## Creadores
+-Guido Libertini
+-Juan Pazos.
