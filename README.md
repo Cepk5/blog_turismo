@@ -1,5 +1,6 @@
 # blog_turismo
 
+## Descripcion
 - Para acceder a la web deberá dirigirse a la página de inicio: http://127.0.0.1:8000/ donde se desplegará la página de inicio del blog.
 - En la página de inicio en el borde superior derecho encontrarás una barra de navegación con varias opciones.
 - En el cuerpo de la página encontrarás consejos útiles y recomendaciones para emprender tu viaje.
@@ -8,5 +9,14 @@
 - Si quieres utilizar el botón “Centro de Mensajes” deberás previamente “Registrarte” completando los datos requeridos, para después sí poder comunicarte con nosotros u otros usuarios.
 - Para agregar, editar o borrar un articulo deberás iniciar sesión como administrador.
 
+## Version 2.0v
+- Articulo random para la pagina de inicio.
+-	Agregar comentarios a los posts.
+-	Buscador de articulos.
+-	Link seleccion por categorias.
+-	Mensajes de sistema.
+-	Mensajes entre usuarios leidos/no leidos, borrar mensaje/papelera, contestar mensaje.
+-	Subir a Heroku.
 
+### Creadores
 Las tareas fueron realizadas por: Guido Libertini, Juan Pazos.
