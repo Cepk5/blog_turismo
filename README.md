@@ -19,5 +19,5 @@
 -	Subir a Heroku.
 
 ## Creadores
--Guido Libertini
--Juan Pazos.
+-	Guido Libertini
+-	Juan Pazos
