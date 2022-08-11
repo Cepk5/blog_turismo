@@ -7,6 +7,6 @@
 - En el botón “Acerca de mí” podrás conocernos un poco y algo de nuestras historias de viajes.
 - Si quieres utilizar el botón “Centro de Mensajes” deberás previamente “Registrarte” completando los datos requeridos, para después sí poder comunicarte con nosotros u otros usuarios.
 - Para agregar, editar o borrar un articulo deberás iniciar sesión como administrador.
-- 
+
 
 Las tareas fueron realizadas por: Guido Libertini, Juan Pazos.
