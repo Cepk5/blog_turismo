@@ -9,9 +9,10 @@
 - Si quieres utilizar el botón “Centro de Mensajes” deberás previamente “Registrarte” completando los datos requeridos, para después sí poder comunicarte con nosotros u otros usuarios.
 - Para agregar, editar o borrar un articulo deberás iniciar sesión como administrador.
 
-## Version 2.0v
+## Version 2.0v (En desarrollo)
 - Articulo random para la pagina de inicio.
 -	Agregar comentarios a los posts.
+- Mostrar avatar.
 -	Buscador de articulos.
 -	Link seleccion por categorias.
 -	Mensajes de sistema.
